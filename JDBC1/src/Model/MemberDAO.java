@@ -67,7 +67,7 @@ public class MemberDAO {
 			//4. sql문 실행 객체 (preparedStatement)생성
 			pst = conn.prepareStatement(sql);
 			
-			C_q_num++;
+			
 			
 			//5. 바인드 변수(?) 채우기
 			
@@ -92,17 +92,17 @@ public class MemberDAO {
 	}
 	
 	//로그인 기능
-	public MemberVO login(String C_EMAIL, String C_PW) {
+	public MemberVO login(String C_id, String C_PW) {
 		
 		try {
 			
 			connection();
 			
-			String sql = "select * from FISH_CUSTOMER where C_EMAIL =? and C_PW = ?";
+			String sql = "select * from FISH_CUSTOMER where C_id =? and C_PW = ?";
 			
 			pst = conn.prepareStatement(sql);
 
-			pst.setString(1, C_EMAIL);
+			pst.setString(1, C_id);
 			pst.setString(2, C_PW);
 			
 			
@@ -111,12 +111,13 @@ public class MemberDAO {
 			if(rs.next()) {
 				System.out.println("로그인성공!");
 				
-				String get_email = rs.getString("email");
-				String get_tel = rs.getString(2);
-				String get_address = rs.getString(3);
+//				String get_email = rs.getString("email");
+//				String get_tel = rs.getString(2);
+//				String get_address = rs.getString(3);
 				
-				vo = new MemberVO(get_email, get_tel, get_address);
-				
+//				vo = new MemberVO(get_email, get_tel, get_address);
+				String get_id = rs.getString("id");
+				String get_pw = rs.getString("pw");
 				
 			}else {
 				System.out.println("로그인 실패!");
