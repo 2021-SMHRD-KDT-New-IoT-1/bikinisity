@@ -1,10 +1,12 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ê²Œì‹œíŒê¸€ì“°ê¸°</title>
+  <title>°Ô½ÃÆÇ±Û¾²±â</title>
   <style>
     caption{
       font-size:40px ;
@@ -15,7 +17,7 @@
 </head>
 <body bgcolor="skyblue">
 
-	<table summary="ê¸€ì“°ê¸° ì „ì²´ í…Œì´ë¸”">
+	<table summary="±Û¾²±â ÀüÃ¼ Å×ÀÌºí">
 		
 		
    		<colgroup>
@@ -24,10 +26,10 @@
    		</colgroup>
    	
 
-		<table summary="í…Œì´ë¸” êµ¬ì„±" align="center">
-		<caption><h2>ê²Œì‹œíŒ ê¸€ì“°ê¸°</h2></caption>	
+		<table summary="Å×ÀÌºí ±¸¼º" align="center">
+		<caption><h2>°Ô½ÃÆÇ ±Û¾²±â</h2></caption>	
     		<tr>
-				<td>ì‘ì„±ì</td>
+				<td>ÀÛ¼ºÀÚ</td>
 				<td><input type=text name=name size=10 maxlength=8></td>
 			</tr>
 			<tr>
@@ -35,19 +37,19 @@
 	 			<td><input type=text name=email size=30></td>
     		</tr>
     		<tr>
-     			<td>í™ˆí˜ì´ì§€</td>
+     			<td>È¨ÆäÀÌÁö</td>
      			<td><input type=text name=homepage size=30></td>
     		</tr>
     		<tr>
-     			<td>ì œ ëª©</td>
+     			<td>Á¦ ¸ñ</td>
      			<td><input type=text name=title></td>
     		</tr>
     		<tr>
-     			<td>ë‚´ ìš©</td>
+     			<td>³» ¿ë</td>
      			<td><textarea name=content rows ="10" cols="100"style="margin: 0px; width: 727px; height: 497px;"></textarea>></textarea></td>
     		</tr>
     		<tr>
-     			<td>ë¹„ë°€ë²ˆí˜¸</td> 
+     			<td>ºñ¹Ğ¹øÈ£</td> 
      			<td><input type=password name=password size=15 maxlength=15></td>
     		</tr>
     		<tr>
@@ -55,14 +57,14 @@
     		</tr>
     		<tr>
      			<td colspan="2"><div align="center">
-     			<input type="submit" value="ë“±ë¡" id="submit">&nbsp;&nbsp;
-         		<input type="button" value="ë’¤ë¡œ" id="back"></div>
+     			<input type="submit" value="µî·Ï" id="submit">         <!-- ÀÛ¼ºµÈ °Ô½Ã±Û(ÀÛ¼ºÀÚ, E-Mail, È¨ÆäÀÌÁö, Á¦¸ñ, ³»¿ë)À» °í°´ ¾ÆÀÌµğ¿¡ ¸Â°Ô µî·Ï (submit) -->  
+         		<input type="button" value="µÚ·Î" id="back"></div>	
 				<script>
 					document.getElementById("back").addEventListener("click",function(){
-						location.href="http://127.0.0.1:5500/%EA%B1%B4%EC%9D%B4%EA%BA%BC/Board.html";
+						location.href="http://127.0.0.1:5500/%EA%B1%B4%EC%9D%B4%EA%BA%BC/Board.jsp";
 					})
 					document.getElementById("submit").addEventListener("click",function(){
-						location.href="http://127.0.0.1:5500/%EA%B1%B4%EC%9D%B4%EA%BA%BC/Board.html";
+						location.href="http://127.0.0.1:5500/%EA%B1%B4%EC%9D%B4%EA%BA%BC/Board.jsp";
 					})
 			
 				</script>

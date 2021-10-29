@@ -1,68 +1,70 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ë¹„í‚¤ë‹ˆì‹œí‹°-ê²Œì‹œíŒ</title>
+    <title>ºñÅ°´Ï½ÃÆ¼-°Ô½ÃÆÇ</title>
     
 </head>
-<body bgcolor="skyblue"> <!--ê²Œì‹œíŒ ë§Œë“¤ê¸°-->
+<body bgcolor="skyblue"> <!--°Ô½ÃÆÇ ¸¸µé±â-->
     
     
-    <h1 align="center">ììœ ê²Œì‹œíŒ</h1>
+    <h1 align="center">ÀÚÀ¯°Ô½ÃÆÇ</h1>
     <br><br>
 
     <table border="1px"  algin="center"width="1900"; height="500">
     <tr>
-        <th style="background-color:#eeeeee; text-align:center">ë²ˆí˜¸</th>
-        <th colspan="4" style="background-color:#eeeeee; text-align:center">ì œëª©</th>
-        <th style="background-color:#eeeeee; text-align:center">ê¸€ì“´ì´</th>
-        <th style="background-color:#eeeeee; text-align:center">ì‘ì„±ì¼</th>
-        <th style="background-color:#eeeeee; text-align:center">ì¡°íšŒìˆ˜</th>
+        <th style="background-color:#eeeeee; text-align:center">¹øÈ£</th>
+        <th colspan="4" style="background-color:#eeeeee; text-align:center">Á¦¸ñ</th>
+        <th style="background-color:#eeeeee; text-align:center" >±Û¾´ÀÌ</th>     
+        <th style="background-color:#eeeeee; text-align:center">ÀÛ¼ºÀÏ</th>
+        <th style="background-color:#eeeeee; text-align:center">Á¶È¸¼ö</th>
     </tr>
     
     <tr style="background-color:#eeeeee; text-align:center">
         <td >15</td>
-        <td colspan="4">ì´ê±°ë„ˆë¬´ì¢‹ì•„ìš”!</td>
-        <td>ë°©ìƒí˜</td>
+        <td colspan="4">ÀÌ°Å³Ê¹«ÁÁ¾Æ¿ä!</td>
+        <td>¹æ»óÇõ</td>
         <td>2021-10-25</td>
         <td>300</td>
     </th>
     
     <tr style="background-color:#eeeeee; text-align:center">
         <td>16</td>
-        <td colspan="4">í›„íšŒì•ˆí•©ë‹ˆë‹¤.....!!!</td>
-        <td>ê¹€ì°¬ìš±</td>
+        <td colspan="4">ÈÄÈ¸¾ÈÇÕ´Ï´Ù.....!!!</td>
+        <td>±èÂù¿í</td>
         <td>2021-10-17</td>
         <td>350</td>
     </tr>
     
     <tr style="background-color:#eeeeee; text-align:center">
         <td>17</td>
-        <td colspan="4">ë‘ë²ˆì§¸ êµ¬ë§¤ì¤‘ì…ë‹ˆë‹¤^^</td>
-        <td>ì´ê°•ê±´</td>
+        <td colspan="4">µÎ¹øÂ° ±¸¸ÅÁßÀÔ´Ï´Ù^^</td>
+        <td>ÀÌ°­°Ç</td>
         <td>2021-09-20</td>
         <td>400</td>
     </tr>
     
     <tr style="background-color:#eeeeee; text-align:center">
         <td>18</td>
-        <td colspan="4">ì‚¬ì¥ë‹˜ê°ì‚¬í•©ë‹ˆë‹¤^^~</td>
-        <td>ê¹€ê²½ìˆ˜</td>
+        <td colspan="4">»çÀå´Ô°¨»çÇÕ´Ï´Ù^^~</td>
+        <td>±è°æ¼ö</td>
         <td>2021-10-08</td>
         <td>700</td>
     </tr>
     </table>
     
-    <input type="button" value="ë’¤ë¡œê°€ê¸°" id="f"/>
-    <input type="button" value="ê¸€ì“°ê¸°" id="i"/>
+    <input type="button" value="µÚ·Î°¡±â" id="f"/>      
+    <input type="button" value="±Û¾²±â" id="i"/>
     <script>
         document.getElementById("i").addEventListener("click",function(){
-            location.href="BoardWrite.html";
+            location.href="BoardWrite.jsp";
         })
         document.getElementById("f").addEventListener("click",function(){
-            location.href="MainBoard.html";
+            location.href="MainBoard.jsp";
         })
 
     </script>

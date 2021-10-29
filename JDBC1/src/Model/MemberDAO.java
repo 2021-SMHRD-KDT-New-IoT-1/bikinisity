@@ -55,7 +55,7 @@ public class MemberDAO {
 	
 
 	//회원가입 기능(메소드)
-	public int join(String C_name, String C_address, String C_id, String C_pw, String C_email) {
+	public int join(String C_id, String C_pw, String C_name, String C_address, String C_email) {
 
 		//받아온 값을 DB 테이블에 삽입
 		try {
@@ -71,11 +71,10 @@ public class MemberDAO {
 			
 			//5. 바인드 변수(?) 채우기
 			
-			
-			pst.setString(1, C_name);
-			pst.setString(2, C_address);
-			pst.setString(3, C_id);
-			pst.setString(4, C_pw);
+			pst.setString(1, C_id);
+			pst.setString(2, C_pw);
+			pst.setString(3, C_name);
+			pst.setString(4, C_address);
 			pst.setString(5, C_email);
 			
 			//6.sql문 실행 후 결과 처리
@@ -92,48 +91,44 @@ public class MemberDAO {
 	}
 	
 	//로그인 기능
-	public MemberVO login(String C_id, String C_PW) {
+	public MemberVO login(String C_id, String C_pw) {
 		
 		try {
-			
-			connection();
-			
-			String sql = "select * from FISH_CUSTOMER where C_id =? and C_PW = ?";
-			
-			pst = conn.prepareStatement(sql);
+			// 2. OracleDriver.class 동적 로딩
+			Class.forName("oracle.jdbc.driver.OracleDriver");
 
-			pst.setString(1, C_id);
-			pst.setString(2, C_PW);
-			
-			
-			rs = pst.executeQuery();
-			//rs.next() -> true / false
-			if(rs.next()) {
-				System.out.println("로그인성공!");
-				
-//				String get_email = rs.getString("email");
-//				String get_tel = rs.getString(2);
-//				String get_address = rs.getString(3);
-				
-//				vo = new MemberVO(get_email, get_tel, get_address);
-				String get_id = rs.getString("id");
-				String get_pw = rs.getString("pw");
-				
-			}else {
-				System.out.println("로그인 실패!");
+			// 3. Oracle로 가서 DBid, DBpw를 인증
+			String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe";
+			String user = "campus_a_1_1025";
+			String password = "smhrd1";
+			Connection conn = DriverManager.getConnection(url, user, password);
+
+			if (conn != null) {
+				System.out.println("연결 성공");
+			} else {
+				System.out.println("연결 실패");
 			}
+
+			// 4. SQL문 준비
+			String sql = "SELECT * FROM Fish_Customer where C_id = ? and C_pw=?";
+			PreparedStatement psmt = conn.prepareStatement(sql);
 			
+			psmt.setString(1, C_id);
+			psmt.setString(2, C_pw);
+			// 5. SQL문 명령 후 처리
+			ResultSet rs = psmt.executeQuery();
+
+			if (rs.next()) {
+				System.out.println("로그인성공");
+			} else {
+				System.out.println("로그인실패");
+			}
+
 		} catch (Exception e) {
-			System.out.println("로그인 실패");
+			System.out.println("실패");
 			e.printStackTrace();
-		}finally {
-			try {
-				close();
-				
-			} catch (Exception e2) {
-				e2.printStackTrace();
-			}
 		}
+		
 		return vo;
 	}
 	
@@ -190,7 +185,7 @@ public class MemberDAO {
 				String get_tel = rs.getString(2);
 				String get_address = rs.getString(3);
 				
-				vo = new MemberVO(get_email, get_tel, get_address);
+			//	vo = new MemberVO(get_email, get_tel);
 				
 				al.add(vo);
 			}

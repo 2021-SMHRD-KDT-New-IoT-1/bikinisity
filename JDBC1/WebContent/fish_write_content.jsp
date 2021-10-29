@@ -1,22 +1,24 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ì–´í•­ê¸°ë¡</title>
+    <title>¾îÇ×±â·Ï</title>
     <link rel = "stylesheet" href = "fish_write_content.css">
 </head>
 <body bgcolor ="skyblue">
 
     <header>
         <h1>
-          <a href = "main.html">bikinicity</a>
+          <a href = "main.jsp">bikinicity</a>
         </h1>
         <nav>        
             <ul>
-                <li><a href = "main.html">ë¡œê·¸ì•„ì›ƒ</a></li>
-                <li><a href = "#">ê°œì¸ì •ë³´ìˆ˜ì •</a></li>
+                <li><a href = "main.jsp">·Î±×¾Æ¿ô</a></li>
+                <li><a href = "#">°³ÀÎÁ¤º¸¼öÁ¤</a></li>
             </ul>
         </nav>
     </header>
@@ -24,25 +26,27 @@
 
         <div id="d1">
         <table>
-            <td>í™˜ìˆ˜ ì—¬ë¶€</td>
+            <td>È¯¼ö ¿©ºÎ</td>
             <td>
-            O <input type ="radio" name = "change">
-            X <input type ="radio" name = "change">
+            
+            O <input type ="radio" name = "change" id="s"> 
+            X <input type ="radio" name = "change" id="s">
+
             </td>
 
             <tr>
-                <td>ë¨¹ì´ íšŸìˆ˜</td>
-                <td><a href="#">ëª‡ë²ˆ</a></td>
+                <td>¸ÔÀÌ È½¼ö</td>
+                <td><a href="#">¸î¹ø</a></td>
             </tr>
 
             <tr >
-                <td >í‰ê·  íƒë„</td>
-                <td><a href="#">ê°’</a></td>
+                <td >Æò±Õ Å¹µµ</td>
+                <td><a href="#">°ª</a></td>
             </tr>
 
             <tr >
-                <td >í‰ê·  ìˆ˜ì˜¨</td>
-                <td><a href="#">ê°’</a></td>
+                <td >Æò±Õ ¼ö¿Â</td>
+                <td><a href="#">°ª</a></td>
             </tr>
         </table>
         </div>
@@ -50,7 +54,7 @@
         <div id="d2">
             <table>
                 <tr>
-                    <td>ë©”ëª¨</td>
+                    <td>¸Þ¸ð</td>
                 </tr>
                 <tr >
                     <td><textarea cols="80" rows="6"></textarea></td>
@@ -59,9 +63,9 @@
             </table>
         </div>
         
-        <form action="Calendar-master/index.html">
+        <form action="Calendar-master/index.jsp">
             <button>
-                ì €ìž¥
+                ÀúÀå
             </button>
         </form>
             

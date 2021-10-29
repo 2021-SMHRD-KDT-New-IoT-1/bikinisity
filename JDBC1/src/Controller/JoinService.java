@@ -24,28 +24,23 @@ public class JoinService extends HttpServlet {
 		request.setCharacterEncoding("euc-kr");
 		
 		//요청데이터 받아주기
-		String email = request.getParameter("email");
-		String pw =  request.getParameter("pw");
-		String tel = request.getParameter("tel");
-		String address = request.getParameter("address");
+	
+		String C_id = request.getParameter("C_id");
+		String C_pw = request.getParameter("C_pw");
+		String C_name = request.getParameter("C_name");
+		String C_address =  request.getParameter("C_address");
+		String C_email = request.getParameter("C_email");
 		
 		MemberDAO dao = new MemberDAO();
-		int cnt = dao.join(email, pw, tel, address, address);
+		int cnt = dao.join(C_id, C_pw, C_name, C_address, C_email);
 		
 		if(cnt >0) {
 			System.out.println("가입성공");
 			
-			//forward 방식으로 페이지 이동
-			RequestDispatcher rd = request.getRequestDispatcher("join_success.jsp");
-			
 			//request 영역에 기억해야할 데이터 설정
-			request.setAttribute("email", email);
+			request.setAttribute("C_id", C_id);
 			
-			//페이지 이동시 request, response 객체전달
-			rd.forward(request, response);
 			
-			//response.sendRedirect("join_success.jsp?email="+email);
-			//쿼리스트링 방식으로 데이터 전송 -> 받을때는 getParameter()로
 			
 		}else {
 			System.out.println("가입실패");

@@ -15,12 +15,12 @@ import javax.servlet.http.HttpServletResponse;
 public class IdCheckService extends HttpServlet {
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String email = request.getParameter("email");
+		String C_id = request.getParameter("C_id");
 		
-		System.out.println(email);
+		System.out.println(C_id);
 		
 		Model.MemberDAO dao = new Model.MemberDAO();
-		boolean check = dao.idCheck(email);
+		boolean check = dao.idCheck(C_id);
 		
 		//출력 스트림(통로)
 		PrintWriter out = response.getWriter();

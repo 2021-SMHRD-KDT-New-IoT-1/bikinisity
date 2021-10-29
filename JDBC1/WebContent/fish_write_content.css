@@ -27,8 +27,11 @@ nav>ul>li>a:hover{
 }
 
 #d1{
-    margin-left: 40%;
-    margin-top: 10%;
+    margin-left: 38%;
+    margin-top: 7%;
+    font-size: 35px;
+    text-align: center;
+
 }
 
 #d2{
@@ -36,11 +39,17 @@ nav>ul>li>a:hover{
     margin-left:30% ;
     margin-right:30% ;
     margin-top: 5%;
+    font-size: 35px;
 }
 
 form{
     margin-left:48%;
     margin-top: 3%;
+}
+
+#s{
+    width:30px;
+    height:30px;
 }
 
 

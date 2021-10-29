@@ -23,26 +23,26 @@ public class LoginService extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
-//	String email =  request.getParameter("email");
-//	String pw = request.getParameter("pw");
-		String =
-	MemberDAO dao = new MemberDAO();
-	MemberVO vo = dao.login(email,pw);
-	
-	if(vo != null) {
-	//技记 按眉 积己
-	HttpSession session = request.getSession();
-	
-	//技记 蔼 汲沥
-	session.setAttribute("member", vo);
-	response.sendRedirect("main.jsp");
-	}else {
+
+		
+		String C_id =  request.getParameter("id");
+		String C_pw = request.getParameter("id");
+		MemberDAO dao = new MemberDAO();
+		MemberVO vo = dao.login(C_id,C_pw);
+		
+		if(vo != null) {
+		//技记 按眉 积己
+		HttpSession session = request.getSession();
+		
+		//技记 蔼 汲沥
+		session.setAttribute("member", vo);
 		response.sendRedirect("main.jsp");
+		}else {
+			response.sendRedirect("main.jsp");
+		}
+		
+		
 	}
-	
-	
-}
 
 
 
